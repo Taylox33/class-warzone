@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Warzone - Classes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="classes.html" class="active">Classes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="classes-section">
+    <h2 id="mitraillettes" class="categorie-titre violet">Mitraillettes</h2>
+
+    <div class="classe">
+      <h3>LC10</h3>
+      <p>Mitraillette</p>
+      <img src="images/lc10.png" alt="LC10" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>KSV</h3>
+      <p>Mitraillette</p>
+      <img src="images/ksv.png" alt="KSV" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>C9</h3>
+      <p>Mitraillette</p>
+      <img src="images/c9.png" alt="C9" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>PPSh-41</h3>
+      <p>Mitraillette</p>
+      <img src="images/ppsh-41.png" alt="PPSh-41" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>Bullfrog</h3>
+      <p>Mitraillette</p>
+      <img src="images/bullfrog.png" alt="Bullfrog" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>Milano 821</h3>
+      <p>Mitraillette</p>
+      <img src="images/milano821.png" alt="Milano 821" class="zoomable" />
+    </div>
+
+    <h2 id="fusils-assaut" class="categorie-titre bleu">Fusils d'Assaut</h2>
+
+    <div class="classe">
+      <h3>Kilo 141</h3>
+      <p>Fusil d’Assaut</p>
+      <img src="images/kilo141.png" alt="Kilo 141" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>Krig C</h3>
+      <p>Fusil d’Assaut</p>
+      <img src="images/krigc.png" alt="Krig C" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>XM4</h3>
+      <p>Fusil d’Assaut</p>
+      <img src="images/xm4.png" alt="XM4" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>FARA 83</h3>
+      <p>Fusil d’Assaut</p>
+      <img src="images/fara83.png" alt="FARA 83" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>M4A1</h3>
+      <p>Fusil d’Assaut</p>
+      <img src="images/m4a1.png" alt="M4A1" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>Grau 5.56</h3>
+      <p>Fusil d’Assaut</p>
+      <img src="images/grau556.png" alt="Grau 5.56" class="zoomable" />
+    </div>
+
+    <h2 id="snipers" class="categorie-titre jaune">Snipers</h2>
+
+    <div class="classe">
+      <h3>HDR</h3>
+      <p>Fusil de Sniper</p>
+      <img src="images/hdr.png" alt="HDR" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>Kar98k</h3>
+      <p>Fusil de Sniper</p>
+      <img src="images/kar98k.png" alt="Kar98k" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>AX-50</h3>
+      <p>Fusil de Sniper</p>
+      <img src="images/ax50.png" alt="AX-50" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>SP-R 208</h3>
+      <p>Fusil de Sniper</p>
+      <img src="images/spr208.png" alt="SP-R 208" class="zoomable" />
+    </div>
+
+    <h2 id="fusils-tactiques" class="categorie-titre rose">Fusils Tactiques</h2>
+
+    <div class="classe">
+      <h3>SWAT 5.56</h3>
+      <p>Fusil Tactique</p>
+      <img src="images/swat556.png" alt="SWAT 5.56" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>M16</h3>
+      <p>Fusil Tactique</p>
+      <img src="images/m16.png" alt="M16" class="zoomable" />
+    </div>
+
+    <div class="classe">
+      <h3>AUG</h3>
+      <p>Fusil Tactique</p>
+      <img src="images/aug.png" alt="AUG" class="zoomable" />
+    </div>
+  </section>
+
+  <!-- Modal Zoom -->
+  <div id="modal" class="modal">
+    <span id="modal-close" class="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img" />
+    <div id="modal-caption" class="modal-caption"></div>
+  </div>
+
+  <script>
+    // Zoom images script
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalCaption = document.getElementById('modal-caption');
+    const modalClose = document.getElementById('modal-close');
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+        modalCaption.textContent = img.alt;
+      });
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
